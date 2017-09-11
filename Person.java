@@ -7,8 +7,12 @@ public class Person {
     private int height;
 
     public Person(String initialName) {
-        this.name = initialName;
-        this.age = 0;
+        this(initialName, 0);
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
         this.weight = 0;
         this.height = 0;
     }
@@ -38,12 +42,24 @@ public class Person {
         return name;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     public void printPerson() {
         System.out.println(this.name + ", age " + this.age + " years.");
     }
 
     public void becomeOlder() {
         this.age++;
+    }
+
+    public void becomeOlder(int years) {
+        this.age = this.age + years;
     }
 
     public boolean isAdult() {

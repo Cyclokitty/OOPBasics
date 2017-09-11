@@ -8,8 +8,49 @@ import java.util.Scanner;
 public class Main  {
 
     public static void main(String[] args) throws Exception {
+
+        Counter myCounter = new Counter();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.increase();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.decrease();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.decrease();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.decrease();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.decrease();
+        System.out.println("My count is now: " + myCounter.value());
+        myCounter.increase(25);
+        System.out.println("My count is now: " + myCounter.value());
+
+        Counter haveNegatives = new Counter(true);
+        haveNegatives.increase();
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease();
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease();
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease();
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease(-5);
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.increase(25);
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease(24);
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+        haveNegatives.decrease(5);
+        System.out.println("I hate negative digits: " + haveNegatives.value());
+
+        System.out.println("**********");
+
         Person matti = new Person("Matti");
         Person john = new Person("John");
+        Person lula = new Person("Lula", 24);
+        Person esko = new Person("Esko");
+
+        System.out.println(lula);
+        System.out.println(esko);
 
         matti.setHeight(180);
         matti.setWeight(86);
@@ -23,6 +64,8 @@ public class Main  {
         System.out.println(john.getName() + ", body mass index: " + String.format("%.2f", john.bodyMassIndex()) );
 
         System.out.println(matti);
+        esko.becomeOlder(10);
+        System.out.println("Esko is " + esko.getAge() + " years old.");
 
         System.out.println("**********");
 
@@ -167,5 +210,6 @@ public class Main  {
             i++;
         }
     }
+
 
 }
