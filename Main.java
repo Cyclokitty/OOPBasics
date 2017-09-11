@@ -1,8 +1,5 @@
 package com.cyclokitty;
 
-import com.sun.org.apache.xpath.internal.operations.Mult;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main  {
@@ -48,6 +45,29 @@ public class Main  {
         Person john = new Person("John");
         Person lula = new Person("Lula", 24);
         Person esko = new Person("Esko");
+        Person joey = new Person("Joey");
+        Person amy = new Person("Amy");
+
+        joey.setWeight(86);
+        joey.setHeight(180);
+
+        amy.setWeight(64);
+        amy.setHeight(172);
+
+        WeightWatchersAssociation kumpalasWeight = new WeightWatchersAssociation(25);
+
+        if (kumpalasWeight.isAcceptedAsMember(joey)) {
+            System.out.println(joey.getName() + " is accepted as a member.");
+        } else {
+            System.out.println(joey.getName() + " is not accepted as a member.");
+        }
+
+        if (kumpalasWeight.isAcceptedAsMember(amy)) {
+            System.out.println(amy.getName() + " is accepted as a member.");
+        } else {
+            System.out.println(amy.getName() + " is not accepted as a member.");
+        }
+
 
         System.out.println(lula);
         System.out.println(esko);
@@ -66,6 +86,12 @@ public class Main  {
         System.out.println(matti);
         esko.becomeOlder(10);
         System.out.println("Esko is " + esko.getAge() + " years old.");
+
+        Reformatory eastHelsinki = new Reformatory();
+
+        Person wanda = new Person("Wanda", 35);
+        wanda.setWeight(65);
+        System.out.println(wanda.getName() + " weight: " + eastHelsinki.weight(wanda) + " kgs.");
 
         System.out.println("**********");
 
