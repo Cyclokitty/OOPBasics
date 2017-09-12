@@ -29,6 +29,14 @@ public class Person {
         this.age = age;
     }
 
+    public boolean olderThan(Person compared) {
+        if (this.age > compared.age) {
+            return true;
+        }
+        return false;
+
+    }
+
     public double bodyMassIndex() {
         double heightDivideByHundred = this.height / 100.0;
         return this.weight / (heightDivideByHundred * heightDivideByHundred);

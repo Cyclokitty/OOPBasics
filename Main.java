@@ -92,6 +92,12 @@ public class Main  {
         amy.setWeight(64);
         amy.setHeight(172);
 
+        if (lula.olderThan(esko)) {
+            System.out.println(lula.getName() + " is older than " + esko.getName());
+        } else {
+            System.out.println(esko.getName() + " is older than " + lula.getName());
+        }
+
         WeightWatchersAssociation kumpalasWeight = new WeightWatchersAssociation(25);
 
         if (kumpalasWeight.isAcceptedAsMember(joey)) {
