@@ -48,6 +48,13 @@ public class Main  {
         Person joey = new Person("Joey");
         Person amy = new Person("Amy");
 
+        lula.setWeight(75);
+        lula.setHeight(157);
+
+        esko.setAge(43);
+        esko.setWeight(100);
+        esko.setHeight(180);
+
         joey.setWeight(86);
         joey.setHeight(180);
 
@@ -167,6 +174,16 @@ public class Main  {
         brian.loadMoney(50);
         System.out.println(pekka);
         System.out.println(brian);
+
+        LyyraCard laura = new LyyraCard(10);
+        System.out.println("money on card: " + laura.balance());
+        boolean succeeded = laura.pay(8);
+        System.out.println("money taken: " + succeeded);
+        System.out.println("money on card: " + laura.balance());
+
+        succeeded = laura.pay(4);
+        System.out.println("money taken: " + succeeded);
+        System.out.println("money on card: " + laura.balance());
 
         System.out.println("**********");
 

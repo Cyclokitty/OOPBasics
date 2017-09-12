@@ -9,6 +9,10 @@ public class LyyraCard {
         this.balance = balanceAtStart;
     }
 
+    public LyyraCard(double balance) {
+        this.balance = balance;
+    }
+
     public String toString() {
         return this.name + ": The card has " + this.balance + " euros.";
     }
