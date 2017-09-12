@@ -11,6 +11,11 @@ public class CashRegister {
         this.gourmetSold = 0;
     }
 
+    public void loadMoneyToCard(LyyraCard card, double sum) {
+        card.loadMoney(sum);
+        this.cashInRegister += sum;
+    }
+
     public double payEconomical(double cashGiven) {
         double economicalLunch = 2.5;
         if (cashGiven >= economicalLunch) {
@@ -21,6 +26,30 @@ public class CashRegister {
             return cashGiven;
         }
         return -1;
+    }
+
+    public boolean payEconomical(LyyraCard card) {
+        double economicalLunch = 2.5;
+        if (card.balance() >= economicalLunch) {
+            card.payEconomical();
+            this.economicalSold++;
+            return true;
+        } else if (card.balance() < economicalLunch) {
+            return false;
+        }
+        return false;
+    }
+
+    public boolean payGourmet(LyyraCard card) {
+        double gourmetLunch = 4.0;
+        if (card.balance() >= gourmetLunch) {
+            card.payGourmet();
+            this.gourmetSold++;
+            return true;
+        } else if (card.balance() < gourmetLunch) {
+            return false;
+        }
+        return false;
     }
 
     public double payGourmet(double cashGiven) {

@@ -18,6 +18,25 @@ public class Main  {
 
         System.out.println("**********");
 
+        CashRegister theCafe = new CashRegister();
+        LyyraCard cardOfLaura = new LyyraCard(7);
+        System.out.println("Today's sales: " + theCafe);
+        double changeBack = theCafe.payEconomical(10);
+        System.out.println("the change is " + changeBack);
+        boolean mealBought = theCafe.payGourmet(cardOfLaura);
+        System.out.println("payment made: " + mealBought);
+        mealBought = theCafe.payGourmet(cardOfLaura);
+        System.out.println("payment made: " + mealBought);
+        mealBought = theCafe.payEconomical(cardOfLaura);
+        System.out.println("payment made: " + mealBought);
+        System.out.println("Balance on card: " + cardOfLaura.balance());
+        System.out.println("Today's sales: " + theCafe);
+        theCafe.loadMoneyToCard(cardOfLaura, 100);
+        System.out.println("Balance on card: " + cardOfLaura.balance());
+        System.out.println("Today's sales: " + theCafe);
+
+        System.out.println("**********");
+
         Counter myCounter = new Counter();
         System.out.println("My count is now: " + myCounter.value());
         myCounter.increase();
