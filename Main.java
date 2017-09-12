@@ -5,6 +5,18 @@ import java.util.Scanner;
 public class Main  {
 
     public static void main(String[] args) throws Exception {
+        CashRegister unicafeExactum = new CashRegister();
+        double theChange = unicafeExactum.payEconomical(10);
+        System.out.println("The change is: " + theChange);
+        theChange = unicafeExactum.payGourmet(5);
+        System.out.println("The change is: " + theChange);
+        theChange = unicafeExactum.payEconomical(1);
+        System.out.println("The change is: " + theChange);
+        theChange = unicafeExactum.payEconomical(2.5);
+        System.out.println("The change is: " + theChange);
+        System.out.println("Today's sales: " + unicafeExactum);
+
+        System.out.println("**********");
 
         Counter myCounter = new Counter();
         System.out.println("My count is now: " + myCounter.value());
