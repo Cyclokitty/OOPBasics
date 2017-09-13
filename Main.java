@@ -5,6 +5,30 @@ import java.util.Scanner;
 public class Main  {
 
     public static void main(String[] args) throws Exception {
+        MyDate first = new MyDate(25, 12, 2016);
+        MyDate second = new MyDate(4, 7, 1776);
+        MyDate third = new MyDate(5, 9, 1981);
+        MyDate fourth = new MyDate(25, 12, 1982);
+
+        System.out.println(first + " earlier than " + second +  " " + first.earlier(second));
+        System.out.println(third + " earlier than " + fourth +  " " + third.earlier(fourth));
+
+        MyDate p1 = new MyDate(14, 2, 2011);
+        MyDate p2 = new MyDate(21, 2, 2011);
+        MyDate p3 = new MyDate(1, 3, 2011);
+        MyDate p4 = new MyDate(31, 12, 2010);
+
+        System.out.println( p1 + " earlier than " + p2 + ": " + p1.earlier(p2));
+        System.out.println( p2 + " earlier than " + p1 + ": " + p2.earlier(p1));
+
+        System.out.println( p2 + " earlier than " + p3 + ": " + p2.earlier(p3));
+        System.out.println( p3 + " earlier than " + p2 + ": " + p3.earlier(p2));
+
+        System.out.println( p4 + " earlier than " + p1 + ": " + p4.earlier(p1));
+        System.out.println( p1 + " earlier than " + p4 + ": " + p1.earlier(p4));
+
+        System.out.println("**********");
+
         CashRegister unicafeExactum = new CashRegister();
         double theChange = unicafeExactum.payEconomical(10);
         System.out.println("The change is: " + theChange);
