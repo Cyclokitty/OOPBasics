@@ -1,16 +1,50 @@
 package com.cyclokitty;
 
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main  {
 
     public static void main(String[] args) throws Exception {
+        ClassRoom student1 = new ClassRoom("Laura Veee", "123456");
+        System.out.println(student1);
+
+        Scanner info = new Scanner(System.in);
+        ArrayList<ClassRoom> javaClass = new ArrayList<>();
+        String studentName = "";
+        String studentNum = "";
+
+        while (true) {
+            System.out.print("Add new student's name: ");
+            studentName = info.nextLine();
+            if (studentName.isEmpty()) {
+                break;
+            }
+            System.out.print("Add new student's number: ");
+            studentNum = info.nextLine();
+            javaClass.add(new ClassRoom(studentName, studentNum));
+        }
+
+        for (ClassRoom students : javaClass) {
+            System.out.println(students);
+        }
+
+
+        System.out.println("**********");
+
         Apartment studioManhatten = new Apartment(1, 16, 5500);
         Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
         Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
         System.out.println(studioManhatten.larger(twoRoomsBrooklyn));
         System.out.println(fourAndKitchenBronx.larger(twoRoomsBrooklyn));
+
+        System.out.println(studioManhatten.priceDifference(twoRoomsBrooklyn));
+        System.out.println(fourAndKitchenBronx.priceDifference(twoRoomsBrooklyn));
+
+        System.out.println(studioManhatten.moreExpensiveThan(twoRoomsBrooklyn));
+        System.out.println(fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn));
 
         System.out.println("**********");
 
